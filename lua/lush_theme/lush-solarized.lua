@@ -63,8 +63,6 @@ local blue = hsl('#268bd2')
 local cyan = hsl('#2aa198')
 local green = hsl('#859900')
 
-local fg = base00
-
 
 -- LSP/Linters mistakenly show `undefined global` errors in the spec, they may
 -- support an annotation like the following. Consult your server documentation.
@@ -88,7 +86,7 @@ local theme = lush(function()
     Conceal  { fg = blue }                                                           , -- placeholder characters substituted for concealed text (see 'conceallevel')
     Cursor  { fg = base3, bg = blue }                                                , -- character under the cursor
     -- lCursor  { }                                                                  , -- the character under the cursor when |language-mapping| is used (see 'guicursor')
-    CursorIM  { bg = fg }                                                            , -- like Cursor, but used when in IME mode |CursorIM|
+    CursorIM  { bg = base00 }                                                        , -- like Cursor, but used when in IME mode |CursorIM|
     CursorColumn  { bg = base02 }                                                    , -- Screen-column at the cursor, when 'cursorcolumn' is set.
     CursorLine  { bg = base02 }                                                      , -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
     Directory  { fg = blue }                                                         , -- directory names (and other special names in listings)
@@ -202,44 +200,44 @@ local theme = lush(function()
     -- LspCodeLens  { }                                                              , -- Used to color the virtual text of the codelens
     -- TSAnnotation  { }                                                             , -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
     -- TSAttribute  { }                                                              , -- (unstable) TODO: docs
-    -- TSBoolean  { }                                                                , -- For booleans.
+    TSBoolean  { fg = magenta }                                                      , -- For booleans.
     -- TSCharacter  { }                                                              , -- For characters.
     -- TSComment  { }                                                                , -- For comment blocks.
     -- TSConstructor  { }` in Lua, and Java constructors.
     -- TSConditional  { }                                                            , -- For keywords related to conditionnals.
-    -- TSConstant  { }                                                               , -- For constants
-    TSConstBuiltin  { fg = orange }                                                  , -- For constant that are built in the language: `nil` in Lua.
+    TSConstant  { fg = magenta }                                                     , -- For constants
+    TSConstBuiltin  { fg = magenta }                                                 , -- For constant that are built in the language: `nil` in Lua.
     -- TSConstMacro  { }                                                             , -- For constants that are defined by macros: `NULL` in C.
     -- TSError  { }                                                                  , -- For syntax/parser errors.
     -- TSException  { }                                                              , -- For exception related keywords.
-    TSField  { fg = magenta }                                                        , -- For fields.
+    -- TSField  { fg = magenta }                                                     , -- For fields.
     -- TSFloat  { }                                                                  , -- For floats.
-    -- TSFunction  { }                                                               , -- For function (calls and definitions).
-    -- TSFuncBuiltin  { }                                                            , -- For builtin functions: `table.insert` in Lua.
+    TSFunction  { fg = blue }                                                        , -- For function (calls and definitions).
+    TSFuncBuiltin  { fg = TSFunction.fg }                                            , -- For builtin functions: `table.insert` in Lua.
     -- TSFuncMacro  { }                                                              , -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
-    -- TSInclude  { }                                                                , -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
+    TSInclude  { fg = green }                                                        , -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
     -- TSKeyword  { }                                                                , -- For keywords that don't fall in previous categories.
-    -- TSKeywordFunction  { }                                                        , -- For keywords used to define a fuction.
+    TSKeywordFunction  { fg = yellow }                                               , -- For keywords used to define a fuction.
     -- TSLabel  { }                                                                  , -- For labels: `label:` in C and `:label:` in Lua.
-    TSMethod  { fg = violet }                                                        , -- For method calls and definitions.
+    -- TSMethod  { fg = violet }                                                     , -- For method calls and definitions.
     -- TSNamespace  { }                                                              , -- For identifiers referring to modules and namespaces.
     -- TSNone  { }                                                                   , -- TODO: docs
-    -- TSNumber  { }                                                                 , -- For all numbers
+    TSNumber  { fg = magenta }                                                       , -- For all numbers
     -- TSOperator  { }                                                               , -- For any operator: `+`, but also `->` and `*` in C.
-    TSParameter  { fg = Identifier.fg }                                              , -- For parameters of a function.
+    TSParameter  { fg = base0 }                                                      , -- For parameters of a function.
     -- TSParameterReference  { }                                                     , -- For references to parameters of a function.
     -- TSProperty  { }                                                               , -- Same as `TSField`.
     -- TSPunctDelimiter  { }                                                         , -- For delimiters ie: `.`
     -- TSPunctBracket  { }                                                           , -- For brackets and parens.
     -- TSPunctSpecial  { }                                                           , -- For special punctutation that does not fall in the catagories before.
     -- TSRepeat  { }                                                                 , -- For keywords related to loops.
-    TSString  { fg = cyan, bg = base02, gui = 'bold' }                               , -- For strings.
+    -- TSString  { fg = cyan, bg = base02, gui = 'bold' }                            , -- For strings.
     -- TSStringRegex  { }                                                            , -- For regexes.
     -- TSStringEscape  { }                                                           , -- For escape characters within a string.
     -- TSSymbol  { }                                                                 , -- For identifiers referring to symbols or atoms.
-    -- TSType  { }                                                                   , -- For types.
-    -- TSTypeBuiltin  { }                                                            , -- For builtin types.
-    TSVariable  { fg = base1 }                                                       , -- Any variable name that does not have another highlight.
+    TSType  { fg = green }                                                           , -- For types.
+    TSTypeBuiltin  { fg = green }                                                    , -- For builtin types.
+    -- TSVariable  { fg = base1 }                                                    , -- Any variable name that does not have another highlight.
     -- TSVariableBuiltin  { }                                                        , -- Variable names that are defined by the languages, like `this` or `self`.
     -- TSTag  { }                                                                    , -- Tags like html tag names.
     -- TSTagDelimiter  { }                                                           , -- Tag delimiter like `<` `>` `/`
