@@ -114,7 +114,7 @@ local theme = lush(function()
     -- MsgSeparator  { }                                                             , -- Separator for scrolled messages, `msgsep` flag of 'display'
     MoreMsg  { fg = blue }                                                           , -- |more-prompt|
     NonText  { fg = base00, gui = 'bold', cterm = 'bold' }                           , -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
-    Normal  { fg = base1, bg = base03 }                                              , -- normal text
+    Normal  { fg = base1 }                                                           , -- normal text
     -- NormalFloat  { }                                                              , -- Normal text in floating windows.
     -- NormalNC  { }                                                                 , -- normal text in non-current windows
     Pmenu  { fg = base1, bg = base02 }                                               , -- Popup menu: normal item.
@@ -208,11 +208,11 @@ local theme = lush(function()
     -- TSConstructor  { }` in Lua, and Java constructors.
     -- TSConditional  { }                                                            , -- For keywords related to conditionnals.
     -- TSConstant  { }                                                               , -- For constants
-    TSConstBuiltin  { fg = yellow }                                                  , -- For constant that are built in the language: `nil` in Lua.
+    TSConstBuiltin  { fg = orange }                                                  , -- For constant that are built in the language: `nil` in Lua.
     -- TSConstMacro  { }                                                             , -- For constants that are defined by macros: `NULL` in C.
     -- TSError  { }                                                                  , -- For syntax/parser errors.
     -- TSException  { }                                                              , -- For exception related keywords.
-    TSField  { fg = violet }                                                         , -- For fields.
+    TSField  { fg = magenta }                                                        , -- For fields.
     -- TSFloat  { }                                                                  , -- For floats.
     -- TSFunction  { }                                                               , -- For function (calls and definitions).
     -- TSFuncBuiltin  { }                                                            , -- For builtin functions: `table.insert` in Lua.
@@ -221,7 +221,7 @@ local theme = lush(function()
     -- TSKeyword  { }                                                                , -- For keywords that don't fall in previous categories.
     -- TSKeywordFunction  { }                                                        , -- For keywords used to define a fuction.
     -- TSLabel  { }                                                                  , -- For labels: `label:` in C and `:label:` in Lua.
-    -- TSMethod  { }                                                                 , -- For method calls and definitions.
+    TSMethod  { fg = violet }                                                        , -- For method calls and definitions.
     -- TSNamespace  { }                                                              , -- For identifiers referring to modules and namespaces.
     -- TSNone  { }                                                                   , -- TODO: docs
     -- TSNumber  { }                                                                 , -- For all numbers
@@ -239,7 +239,7 @@ local theme = lush(function()
     -- TSSymbol  { }                                                                 , -- For identifiers referring to symbols or atoms.
     -- TSType  { }                                                                   , -- For types.
     -- TSTypeBuiltin  { }                                                            , -- For builtin types.
-    TSVariable  { fg = base2 }                                                       , -- Any variable name that does not have another highlight.
+    TSVariable  { fg = base1 }                                                       , -- Any variable name that does not have another highlight.
     -- TSVariableBuiltin  { }                                                        , -- Variable names that are defined by the languages, like `this` or `self`.
     -- TSTag  { }                                                                    , -- Tags like html tag names.
     -- TSTagDelimiter  { }                                                           , -- Tag delimiter like `<` `>` `/`
